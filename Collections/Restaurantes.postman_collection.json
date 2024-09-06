@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "15073c01-b935-4323-b62c-72bf1311686f",
+		"name": "Restaurantes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1002294"
+	},
+	"item": [
+		{
+			"name": "Agregar un restaurante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/restaurantes",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/restaurantes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"restaurantes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todos los restaurantes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todos los restaurantes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "[\n   {\n       \"id\": \"14f05d0e-1275-11ed-861d-0242ac120002\",\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Bogota\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"03/07/2002\"\n    },\n    {\n       \"id\": \"23435d0e-1275-11ed-861d-0242ac120002\",\n        \"nombre\": \"Serrata\",\n        \"ciudad\": \"Bogota\",\n        \"estrellas_michelin\": \"1\",\n        \"fecha\": \"01/08/2020\"\n    }\n]\n\n\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurantes_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurantes_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurantes_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurantes_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n       \"id\": \"14f05d0e-1275-11ed-861d-0242ac120002\",\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Bogota\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"03/07/2002\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante invalido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontro un restaurante con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un restaurante",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Boyaca\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"03/07/2002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar un restaurante",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Boyaca\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"03/07/2002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Boyaca\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"03/07/2002\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un restaurante invalido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar un restaurante invalido",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontro un restaurante con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 204,\n    \"message\": \"Se eliminó el restaurante con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante invalido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró un restaurante con ese id\"\n}"
+				}
+			]
+		}
+	]
+}

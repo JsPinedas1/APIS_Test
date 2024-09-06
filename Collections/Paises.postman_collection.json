@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "a9223d05-bac0-434a-94ca-339d085d470b",
+		"name": "Paises",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17226264"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los paises",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todos los paises",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n  {\r\n    \"nombre\": \"Italia\",\r\n    \"codigo\": \"IT\",\r\n    \"culturasGastronomicas\": [\r\n      {\r\n        \"nombre\": \"Italiana\",\r\n        \"descripcion\": \"Cultura gastronómica de Italia\"\r\n      }\r\n    ],\r\n    \"restaurantes\": [\r\n      {\r\n        \"nombre\": \"Osteria Francescana\",\r\n        \"ciudad\": \"Modena\",\r\n        \"estrellas_michelin\": \"3\",\r\n        \"fecha\": \"2022-01-01\"\r\n      }\r\n    ]\r\n  }\r\n]\r\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener un pais especifico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/paises/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises",
+						"{{id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un pais especifico",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises",
+								"{{id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"nombre\": \"Italia\",\r\n  \"codigo\": \"IT\",\r\n  \"culturasGastronomicas\": [\r\n    {\r\n      \"nombre\": \"Italiana\",\r\n      \"descripcion\": \"Cultura gastronómica de Italia\"\r\n    }\r\n  ],\r\n  \"restaurantes\": [\r\n    {\r\n      \"nombre\": \"Osteria Francescana\",\r\n      \"ciudad\": \"Modena\",\r\n      \"estrellas_michelin\": \"3\",\r\n      \"fecha\": \"2022-01-01\"\r\n    }\r\n  ]\r\n}\r\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener pais invalido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/paises/00000000-0000-0000-0000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises",
+						"00000000-0000-0000-0000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener pais invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/paises/00000000-0000-0000-0000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises",
+								"00000000-0000-0000-0000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El pais con el id ingresado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar pais",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"España\",\r\n  \"codigo\": \"ES\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar pais",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"España\",\r\n  \"codigo\": \"ES\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"id\": \"123\",\r\n  \"nombre\": \"España\",\r\n  \"codigo\": \"ES\"\r\n}\r\n"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un pais",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/paises/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises",
+						"{{id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un pais",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/paises/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises",
+								"{{id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar un pais invalido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/paises/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"paises",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un pais invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/paises/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"paises",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,1484 @@
+{
+	"info": {
+		"_postman_id": "d7859965-cb25-453a-86b0-db4c9f6cdfd6",
+		"name": "Cultura Gastronomica - Restaurante",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3944965",
+		"_collection_link": "https://www.postman.com/warped-satellite-917114/workspace/grupo5-api/collection/3944965-d7859965-cb25-453a-86b0-db4c9f6cdfd6?action=share&source=collection_link&creator=3944965"
+	},
+	"item": [
+		{
+			"name": "Crear cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"cultura_gastronomica_id\", data.id_cultura_gastronomica);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Gastronomía Colombiana\",\n    \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear cultura gastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Gastronomía Colombiana\",\n    \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/culturas_gastronomicas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"culturas_gastronomicas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"f88c6c85-d970-427e-8a61-38a1af5e3d81\",\n    \"nombre\": \"Gastronomía Colombiana\",\n    \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear restaurante 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"restaurante_id_1\", data.id_restaurante);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/restaurantes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"restaurantes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear restaurante 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"restaurante_id_2\", data.id_restaurante);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nombre\": \"Andres carne de res\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"1\",\n   \"fecha\": \"05/10/2005\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/restaurantes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"restaurantes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar Restaurante a Cultura Gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"b4584528-7a09-4634-80d8-2bc5e28d0cce\",\n    \"nombre\": \"La parrilla boyacense\",\n    \"ciudad\": \"Bogotá\",\n    \"estrellas_michelin\": \"0\",\n    \"fecha\": \"2002-07-03\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"{{restaurante_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar Restaurante a Cultura Gastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/culturas_gastronomicas/{{cultura_id}}/restaurantes/{{restaurante_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"culturas_gastronomicas",
+								"{{cultura_id}}",
+								"restaurantes",
+								"{{restaurante_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b4584528-7a09-4634-80d8-2bc5e28d0cce\",\n    \"nombre\": \"La parrilla boyacense\",\n    \"ciudad\": \"Bogotá\",\n    \"estrellas_michelin\": \"0\",\n    \"fecha\": \"2002-07-03\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Agregar un restaurante que no existe a una cultura gastronómica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrado el restaurante con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante que no existe a una cultura gastronómica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/00000000-0000-0000-0000-000000000000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrado el restaurante con el id provisto.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar un restaurante a una cultura gastronómica que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronomica con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes/{{restaurante_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"restaurantes",
+						"{{restaurante_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante a una cultura gastronómica que no existe",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes/{{restaurante_id_1}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"restaurantes",
+								"{{restaurante_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrada la cultura gastronomica con el id provisto.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante de una cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"{{restaurante_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante de una cultura gastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes",
+								"{{restaurante_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"b4584528-7a09-4634-80d8-2bc5e28d0cce\",\n    \"nombre\": \"La parrilla boyacense\",\n    \"ciudad\": \"Bogotá\",\n    \"estrellas_michelin\": \"0\",\n    \"fecha\": \"2002-07-03\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante que no existe de una cultura gastronómica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrado el restaurante con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un producto que no existe de una cultura gastronómica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrado el restaurante con el id provisto.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante de una cultura gastronómica que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronomica con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes/{{restaurante_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"restaurantes",
+						"{{restaurante_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante de una cultura gastronómica que no existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes/{{restaurante_id_1}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"restaurantes",
+								"{{restaurante_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrada la cultura gastronomica con el id provisto.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante que no esta asociado a una cultura gastronómica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"El restaurante con el id dado no esta asociado a la cultura gastronomica.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"{{restaurante_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante que no esta asociado a una cultura gastronómica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes",
+								"{{restaurante_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El restaurante con el id dado no esta asociado a la cultura gastronomica\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener los restaurantes de una cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener los restaurantes de una cultura gastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"b4584528-7a09-4634-80d8-2bc5e28d0cce\",\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Bogotá\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"2002-07-03\"\n    },\n    {\n        \"id\": \"23435d0e-1275-11ed-861d-0242ac120002\",\n        \"nombre\": \"Serrata\",\n        \"ciudad\": \"Bogotá\",\n        \"estrellas_michelin\": \"1\",\n        \"fecha\": \"2020-08-01\"\n    }\n]\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener los restaurantes de una cultura gastronómica que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronómica con el id dado.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener los restaurantes de una cultura gastronómica que no existe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"restaurantes"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrada la cultura gastronómica con el id dado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar la lista de restaurantes de una cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n       \"id_restaurante\": \"{{restaurante_id_2}}\"\n   }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar la lista de restaurantes de una cultura gastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id_restaurante\": \"{{restaurante_id_2}}\"\n   }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"f88c6c85-d970-427e-8a61-38a1af5e3d81\",\n    \"nombre\": \"Gastronomía Colombiana\",\n    \"restaurantes\": [\n        {\n        \"id\": \"b4584528-7a09-4634-80d8-2bc5e28d0cce\",\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Bogotá\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"2002-07-03\"\n        }\n    ]\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Actualizar la lista de restaurantes que no existen de una cultura gastronómica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrado el restaurante con el id dado.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n       \"id_restaurante\": \"00000000-0000-0000-0000-000000000000\"\n   }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar la lista de restaurantes que no existen de una cultura gastronómica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id_restaurante\": \"00000000-0000-0000-0000-000000000000\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 404,\n   \"message\": \"No fue encontrado el restaurante con el id dado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar la lista de restaurantes de una cultura gastronómica que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronómica con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"restaurantes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar la lista de restaurantes de una cultura gastronómica que no existe",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"{{producto_id_2}}\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"restaurantes"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 404,\n   \"message\": \"No fue encontrada la cultura gastronómica con el id provisto\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante de una cultura gastronómica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"{{restaurante_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante de una cultura gastronómica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes",
+								"{{restaurante_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante de una cultura gastronómica que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronómica con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes/{{restaurante_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"restaurantes",
+						"{{restaurante_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante de una cultura gastronómica que no existe",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/restaurantes/{{restaurante_id_2}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"restaurantes",
+								"{{restaurante_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrada la cultura gastronómica con el id provisto\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante que no existe de una cultura gastronómica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrado el restaurante con el id provisto.\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante que no existe de una cultura gastronómica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrado el restaurante con el id provisto\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante que no está asociado a una cultura gastronómica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {",
+							"   pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"El restaurante con el id dado no esta asociado a la cultura gastronomica.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurantes/{{restaurante_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"restaurantes",
+						"{{restaurante_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante que no está asociado a una cultura gastronómica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/restaurante/{{restaurante_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"restaurante",
+								"{{restaurante_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"El restaurante con el id dado no esta asociado a la cultura gastronomica\"\n}"
+				}
+			]
+		}
+	]
+}

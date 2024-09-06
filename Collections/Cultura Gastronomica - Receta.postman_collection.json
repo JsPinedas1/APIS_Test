@@ -1,0 +1,829 @@
+{
+	"info": {
+		"_postman_id": "d761be16-2b84-4b22-92be-6c50b113616a",
+		"name": "Cultura Gastronomica - Receta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1002294"
+	},
+	"item": [
+		{
+			"name": "Agregar una receta a una cultura gastronómica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"{{receta_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar una receta a una cultura gastronómica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"{{receta_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"d48e0c39-e498-4244-8967-6cb96f7ed50f\",\n    \"nombre\": \"Colombiana\",\n    \"descripcion\": \"La cultura gastronómica colombiana es diversa y rica, caracterizada por la variedad de ingredientes, preparaciones, y sabores que reflejan la mezcla de influencias indígenas, africanas, europeas y mestizas en su cocina. Algunas de sus caracteristicas corresponden a la variedad regional, el uso de ingredientes locales, variedad de sopas y caldos, cultura del maíz, platos festivos y tradicionales, bebidas típicas e influencia de fiestas\",\n    \"receta\": [\n        {\n            \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n            \n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar una receta inválida a una cultura gastronómica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar una receta inválida a una cultura gastronómica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró una receta con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar una receta a una cultura gastronómica inválida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{receta_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas",
+						"{{receta_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar una receta a una cultura gastronómica inválida",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{receta_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas",
+								"{{receta_id_1}}"
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró una cultura gastronómica con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta de una cultura gastronómica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"{{receta_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta de una cultura gastronómica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"{{receta_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta inválida de una cultura gastronómica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta inválida de una cultura gastronómica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 404,\n   \"message\": \"No se encontró una receta con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta de una cultura gastronómica inválida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/paises/{{receta_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{receta_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta de una cultura gastronómica inválida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/paises/{{receta_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"paises",
+								"{{receta_id_1}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 404,\n   \"message\": \"No se encontró una cultura gastronómica con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta no asociada a una cultura gastronómica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"{{receta_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta no asociada a una cultura gastronómica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"{{receta_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 412,\n   \"message\": \"El id de esa receta no esta asociada a una cultura gastronómica\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todas las recetas de una cultura gastronómica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todas las recetas de una cultura gastronómica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n   {\n        \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n   },\n    {\n       \"nombre\": \"Bandeja Paisa\",\n    \"descripcion\": \"Plato emblemático de la región paisa de Colombia, que incluye frijoles, arroz, carne molida, chicharrón, plátano maduro, aguacate y arepa.\",\n    \"foto\": \"http://comidacolombiana/paisa/bandeja_paisa.jpg\",\n    \"preparacion\": \"Se cocinan los frijoles y se sirven con arroz. La carne se puede preparar a la parrilla o frita, y el chicharrón se cocina hasta quedar crujiente. Se acompaña con plátano maduro, aguacate y arepa. La bandeja paisa es abundantemente deliciosa y una representación del sabor colombiano.\",\n    \"video\": \"http://comidacolombiana/paisa/bandeja_paisa.mp4\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Actualizar recetas de una cultura gastronómica",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar recetas de una cultura gastronómica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"{{restaurante_id}}\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"d48e0c39-e498-4244-8967-6cb96f7ed50f\",\n    \"nombre\": \"Colombiana\",\n    \"descripcion\": \"La cultura gastronómica colombiana es diversa y rica, caracterizada por la variedad de ingredientes, preparaciones, y sabores que reflejan la mezcla de influencias indígenas, africanas, europeas y mestizas en su cocina. Algunas de sus caracteristicas corresponden a la variedad regional, el uso de ingredientes locales, variedad de sopas y caldos, cultura del maíz, platos festivos y tradicionales, bebidas típicas e influencia de fiestas\",\n    \"recetas\": [\n        {\n            \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco2.mp4\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar recetas inválidas de una cultura gastronómica",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n       \"id\": \"00000000-0000-0000-0000-000000000000\"\n   }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar recetas inválidas de una cultura gastronómica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"00000000-0000-0000-0000-000000000000\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas"
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró una receta asociada a una cultura gastronómica con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar recetas de una cultura cultura gastronómica",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar recetas de una cultura cultura gastronómica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"{{pais_id}}\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se econtraron recetas asociadas con el id de esa cultura gastronómica\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar una receta de una cultura gastronómica",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"{{receta_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una receta de una cultura gastronómica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"{{receta_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Borrar una receta de una cultura gastronómica inválida",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{receta_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000",
+						"recetas",
+						"{{receta_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una receta de una cultura gastronómica inválida",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000/recetas/{{receta_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000",
+								"recetas",
+								"{{receta_id_2}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Borrar una receta inválida de una cultura gastronómica",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una receta inválida de una cultura gastronómica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Borrar una receta que no está asociada a una cultura gastronómica",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}",
+						"recetas",
+						"{{receta_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una receta que no está asociada a una cultura gastronómica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}/recetas/{{receta_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}",
+								"recetas",
+								"{{receta_id_1}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"La receta con el id dado no esta asociado a la cultura gastronómica.\"\n}"
+				}
+			]
+		}
+	]
+}

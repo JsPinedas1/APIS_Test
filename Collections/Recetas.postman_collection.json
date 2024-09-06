@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "12c1505b-3078-4102-822a-a2c06ede07d1",
+		"name": "Recetas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1002294"
+	},
+	"item": [
+		{
+			"name": "Agregar una receta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/recetas",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar una receta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/recetas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"recetas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todas las recetas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todas las recetas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recetas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n    \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n},\n\n{\n    \"nombre\": \"Bandeja Paisa\",\n    \"descripcion\": \"Plato emblemático de la región paisa de Colombia, que incluye frijoles, arroz, carne molida, chicharrón, plátano maduro, aguacate y arepa.\",\n    \"foto\": \"http://comidacolombiana/paisa/bandeja_paisa.jpg\",\n    \"preparacion\": \"Se cocinan los frijoles y se sirven con arroz. La carne se puede preparar a la parrilla o frita, y el chicharrón se cocina hasta quedar crujiente. Se acompaña con plátano maduro, aguacate y arepa. La bandeja paisa es abundantemente deliciosa y una representación del sabor colombiano.\",\n    \"video\": \"http://comidacolombiana/paisa/bandeja_paisa.mp4\"\n}\n\n\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{recetas_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{recetas_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recetas/{{recetas_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"{{recetas_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"14f05d0e-1275-11ed-861d-0242ac120002\",\n    \"nombre\": \"Ajiaco\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una receta invalida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una receta invalida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontro una receta con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar una receta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Ajiaco Santafereño\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{recetas_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{recetas_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar una receta",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Ajiaco Santafereño\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/recetas/{{recetas_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"{{recetas_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Ajiaco Santafereño\",\n    \"descripcion\": \"Sopa típica de Bogotá con variedad de papas, mazorca, alcaparras y crema de leche. \",\n    \"foto\": \"http://comidacolombiana/bogota/ajiaco.jpg\",\n    \"preparacion\": \"Se prepara cociendo pollo en caldo junto con papas (generalmente tres tipos: criolla, pastusa y sabanera) y mazorca de maíz. Se agregan hierbas como el guascas y se sazona al gusto. Se sirve caliente, acompañado de aguacate, arroz y alcaparras. Es un plato delicioso y reconfortante, ideal para compartir.\",\n    \"video\": \"http://comidacolombiana/bogota/ajiaco.mp4\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar una receta invalida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar una receta invalida",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontro una receta con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar una receta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas/{{recetas_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"{{recetas_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una receta",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recetas/{{recetas_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"{{recetas_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 204,\n    \"message\": \"Se eliminó la receta con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar una receta invalida",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/recetas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"recetas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una receta invalida",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recetas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recetas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró una receta con ese id\"\n}"
+				}
+			]
+		}
+	]
+}

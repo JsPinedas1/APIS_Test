@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "26a60c47-733e-4e35-9c6c-e65430c3b3e1",
+		"name": "Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17226264"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los productos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todos los productos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n  {\r\n    \"nombre\": \"Queso Parmesano\",\r\n    \"descripcion\": \"Queso italiano de pasta dura\",\r\n    \"historia\": \"El Parmesano tiene su origen en la Edad Media...\",\r\n    \"categoria\": \"Lácteos\",\r\n    \"culturasGastronomicas\": [\r\n      {\r\n        \"nombre\": \"Italiana\",\r\n        \"descripcion\": \"Cultura gastronómica de Italia\"\r\n      }\r\n    ]\r\n  }\r\n]\r\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener un producto especifico",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un producto especifico",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"nombre\": \"Queso Parmesano\",\r\n  \"descripcion\": \"Queso italiano de pasta dura\",\r\n  \"historia\": \"El Parmesano tiene su origen en la Edad Media...\",\r\n  \"categoria\": \"Lácteos\",\r\n  \"culturasGastronomicas\": [\r\n    {\r\n      \"nombre\": \"Italiana\",\r\n      \"descripcion\": \"Cultura gastronómica de Italia\"\r\n    }\r\n  ]\r\n}\r\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener un producto invalido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un producto invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"statusCode\": 404,\r\n    \"message\": \"El producto con el id ingresado no fue encontrado\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Crear nuevo producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Aceite de Oliva\",\r\n  \"descripcion\": \"Aceite obtenido del fruto del olivo\",\r\n  \"historia\": \"El aceite de oliva ha sido un pilar en la dieta mediterránea...\",\r\n  \"categoria\": \"Aceites\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/productos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear nuevo producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Aceite de Oliva\",\r\n  \"descripcion\": \"Aceite obtenido del fruto del olivo\",\r\n  \"historia\": \"El aceite de oliva ha sido un pilar en la dieta mediterránea...\",\r\n  \"categoria\": \"Aceites\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"id\": \"456\",\r\n  \"nombre\": \"Aceite de Oliva\",\r\n  \"descripcion\": \"Aceite obtenido del fruto del olivo\",\r\n  \"historia\": \"El aceite de oliva ha sido un pilar en la dieta mediterránea...\",\r\n  \"categoria\": \"Aceites\"\r\n}\r\n"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un producto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/{{id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"{{id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"{{id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Eliminar un producto invalido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productos",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Eliminar un producto invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/productos/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"productos",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}

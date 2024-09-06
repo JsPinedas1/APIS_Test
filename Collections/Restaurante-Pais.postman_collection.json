@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "01ee3462-53b5-443a-82dc-32b6d3d0c198",
+		"name": "Restaurante-Pais",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1002294"
+	},
+	"item": [
+		{
+			"name": "Agregar un restaurante a un pais",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises",
+						"{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante a un pais",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/{{pais_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises",
+								"{{pais_id}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\",\n    \"pais\": [\n        {\n            \"id\": \"b4584528-7a09-4634-80d8-2bc5e28d0cce\",\n            \"nombre\": \"Colombia\",\n            \"codigo\": \"CO\"\n            \n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar un restaurante invalido a un pais",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurante/00000000-0000-0000-0000-000000000000/paises/{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurante",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante invalido a un pais",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurante/00000000-0000-0000-0000-000000000000/artworks/{{pais_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurante",
+								"00000000-0000-0000-0000-000000000000",
+								"artworks",
+								"{{pais_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró un restaurante con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Agregar un restaurante a un pais invalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000/paises/{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregar un restaurante a un pais invalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000/paises/{{pais_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000",
+								"paises",
+								"{{pais_id}}"
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró un país con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante de un pais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises",
+						"{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante de un pais",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/{{pais_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises",
+								"{{pais_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante invalido de un pais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000/paises/{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante de un pais invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000/paises/{{pais_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000",
+								"paises",
+								"{{pais_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 404,\n   \"message\": \"No se encontró un restaurante con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante de un pais invalido",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante de un pais invalido",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 404,\n   \"message\": \"No se encontró un país con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener un restaurante no asociado a un pais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises",
+						"{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener un restaurante no asociado a un pais",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n   \"statusCode\": 412,\n   \"message\": \"El id de ese restaurante no esta asociado a un país\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todos los restaurantes de un pais",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todos los restaurantes de un pais",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n   {\n       \"id\": \"28a6bcd5-7f74-4d31-ac70-456d0c520544\",\n        \"nombre\": \"La parrilla boyacense\",\n        \"ciudad\": \"Bogota\",\n        \"estrellas_michelin\": \"0\",\n        \"fecha\": \"03/07/2002\"\n   },\n    {\n       \"id\": \"23435d0e-1275-11ed-861d-0242ac120002\",\n        \"nombre\": \"Serrata\",\n        \"ciudad\": \"Bogota\",\n        \"estrellas_michelin\": \"1\",\n        \"fecha\": \"01/08/2020\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Actualizar restaurantes de un pais",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n       \"id\": \"{{restaurante_id}}\"\n   }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar restaurantes de un pais",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"{{restaurante_id}}\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\n    \"nombre\": \"La parrilla boyacense\",\n   \"ciudad\": \"Bogota\",\n   \"estrellas_michelin\": \"0\",\n   \"fecha\": \"03/07/2002\",\n    \"pais\": [\n        {\n            \"id\": \"b4584528-7a09-4634-80d8-2bc5e28d0cce\",\n            \"nombre\": \"Colombia\",\n            \"codigo\": \"CO\"\n            \n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar restaurantes invalidos de un pais",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n       \"id\": \"00000000-0000-0000-0000-000000000000\"\n   }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar restaurantes invalidos de un pais",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"00000000-0000-0000-0000-000000000000\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises"
+							]
+						}
+					},
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se encontró un restaurante asociado a un pais con ese id\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar restaurantes de un pais invalido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n   {\n       \"id\": \"{{pais_id}}\"\n   }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/museums/00000000-0000-0000-0000-000000000000/artworks",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"museums",
+						"00000000-0000-0000-0000-000000000000",
+						"artworks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar restaurantes de un pais invalido",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n   {\n       \"id\": \"{{pais_id}}\"\n   }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/museums/00000000-0000-0000-0000-000000000000/artworks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"museums",
+								"00000000-0000-0000-0000-000000000000",
+								"artworks"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No se econtraron restaurantes asociados con el id de ese pais\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante de un pais",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante de un pais",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises{{pais_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises{{pais_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante de un pais invalido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000/paises/{{pais_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"00000000-0000-0000-0000-000000000000",
+						"paises",
+						"{{pais_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante de un pais invalido",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/00000000-0000-0000-0000-000000000000/paises/{{pais_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"00000000-0000-0000-0000-000000000000",
+								"paises",
+								"{{pais_id}}"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Borrar un restaurante invalido de un pais",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurantes",
+						"{{restaurante_id}}",
+						"paises",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar un restaurante invalido de un pais",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/restaurantes/{{restaurante_id}}/paises/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurantes",
+								"{{restaurante_id}}",
+								"paises",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}

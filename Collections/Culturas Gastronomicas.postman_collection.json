@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "f9e7517a-69b1-4546-8b41-1c68cab6b7c3",
+		"name": "Culturas Gastronomicas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3944965",
+		"_collection_link": "https://www.postman.com/warped-satellite-917114/workspace/grupo5-api/collection/3944965-f9e7517a-69b1-4546-8b41-1c68cab6b7c3?action=share&source=collection_link&creator=3944965"
+	},
+	"item": [
+		{
+			"name": "Crear cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"cultura_gastronomica_id\", data.id_cultura_gastronomica);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Gastronomía Colombiana\",\n    \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Crear cultura gastronomica",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Gastronomía Colombiana\",\n    \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/culturas_gastronomicas",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"culturas_gastronomicas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"f88c6c85-d970-427e-8a61-38a1af5e3d81\",\n    \"nombre\": \"Gastronomía Colombiana\",\n    \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todas las culturas gastronomicas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Number of museums > ' + 0, function () {",
+							"   var data = pm.response.json()",
+							"   pm.expect(data.length).to.greaterThan(0)",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener todas las culturas gastronomicas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"f88c6c85-d970-427e-8a61-38a1af5e3d81\",\n        \"nombre\": \"Gastronomía Colombiana\",\n        \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n    },\n    {    \n        \"id\": \"22427dad-37ce-4f06-b3cd-3d70fb89251a\",\n        \"nombre\": \"Gastronomía Mexicana\",\n        \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de México.\"\n    },\n    {    \n        \"id\": \"4eab5a74-7d6b-43ed-beec-7f1bd30bfda3\",\n        \"nombre\": \"Gastronomía Venezolana\",\n        \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Venezuela.\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener una cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una cultura gastronomica",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{    \n    \"id\": \"22427dad-37ce-4f06-b3cd-3d70fb89251a\",\n    \"nombre\": \"Gastronomía Mexicana\",\n    \"descripcion\": \"Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de México.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener una cultura gastronomica invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronomica con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener una cultura gastronomica invalida",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/culturas_gastronomicas/00000000-0000-0000-0000-000000000000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrada la cultura gastronomica con el id provisto.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar una cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"   pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Gastronomía Colombiana Actualizada\",\n    \"descripcion\": \"Actualización: Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar una cultura gastronomica",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Gastronomía Colombiana Actualizada\",\n    \"descripcion\": \"Actualización: Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"f88c6c85-d970-427e-8a61-38a1af5e3d81\",\n    \"nombre\": \"Gastronomía Colombiana Actualizada\",\n    \"descripcion\": \"Actualización: Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Actualizar una cultura gastronomica invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronomica con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Gastronomía Colombiana Actualizada\",\n    \"descripcion\": \"Actualización: Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Actualizar una cultura gastronomica invalida",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Gastronomía Colombiana Actualizada\",\n    \"descripcion\": \"Actualización: Una mezcla diversa de sabores e ingredientes provenientes de diferentes regiones de Colombia.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": ""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrada la cultura gastronomica con el id provisto.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Borrar una cultura gastronomica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"   pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"{{cultura_gastronomica_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una cultura gastronomica",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/{{cultura_gastronomica_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"{{cultura_gastronomica_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Borrar una cultura gastronomica invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"   pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"   var data = pm.response.json();",
+							"   pm.expect(data.message).to.eql(\"No fue encontrada la cultura gastronomica con el id provisto.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"culturas_gastronomicas",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Borrar una cultura gastronomica invalida",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/culturas_gastronomicas/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"culturas_gastronomicas",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"No fue encontrada la cultura gastronomica con el id provisto.\"\n}"
+				}
+			]
+		}
+	]
+}
